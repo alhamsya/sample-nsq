@@ -8,7 +8,8 @@ import (
 	"github.com/bitly/go-nsq"
 )
 
-type Employee struct {
+//Request request
+type Request struct {
 	Name   string
 	Number int
 }
@@ -26,7 +27,7 @@ func publisher() {
 		log.Panic("NSQ not running")
 	}
 
-	emp := &Employee{Name: "Rocky", Number: 5454}
+	emp := &Request{Name: "Rocky", Number: 5454}
 
 	dataRequest, err := json.Marshal(emp)
 	if err != nil {
